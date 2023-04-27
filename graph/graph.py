@@ -18,4 +18,4 @@ customdict={
 
 graph=Graph(customdict)
 graph.addEdge('b','e')
-print(graph.gdict['b'])
+print(graph.gdict('b'))
