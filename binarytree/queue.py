@@ -60,3 +60,4 @@ class Queue:
     def delete(self):
         self.linkedList.head = None
         self.linkedList.tail = None
+

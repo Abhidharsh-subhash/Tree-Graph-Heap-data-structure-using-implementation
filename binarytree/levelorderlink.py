@@ -17,7 +17,7 @@ fanta=Treenode('fanta')
 tree.left=hot
 tree.right=cold
 hot.left=tea
-hot.left=coffee
+hot.right=coffee
 cold.left=cola
 cold.right=fanta
 
