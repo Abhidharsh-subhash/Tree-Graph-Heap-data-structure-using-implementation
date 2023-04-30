@@ -1,4 +1,4 @@
-#tree using python list
+#Basic implementation of tree using python list
 
 class TreeNode:
     def __init__(self,data,children = []):
