@@ -1,6 +1,6 @@
 class Heap:
     def __init__(self,size):
-        self.arr=size+1 * [None]
+        self.arr=(size+1) * [None]
         self.heap=0
         self.size=size+1
 
