@@ -35,6 +35,12 @@ def insert(rootnode,value):
         else:
             insert(rootnode.right,value)
 
+def minvalue(node):
+    current=node
+    while current.left is not None:
+        current=current.left
+    return current
+
 new=BST(None)
 insert(new,90)
 insert(new,20)
