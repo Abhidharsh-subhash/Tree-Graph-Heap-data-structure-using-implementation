@@ -1,3 +1,4 @@
+#it is just initialisation of trie 
 class Trienode:
     def __init__(self):
         self.children={}
