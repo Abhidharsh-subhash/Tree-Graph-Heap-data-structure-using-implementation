@@ -1,3 +1,5 @@
+import Queue as queue
+
 class BST:
     def __init__(self,data):
         self.data=data
@@ -18,6 +20,17 @@ def insert(rootnode,value):
         else:
             insert(rootnode.right,value)
     return 'success'
+
+def levelorder(rootnode):
+    customqueue=queue.Queue()
+    customqueue.enqueue(rootnode)
+    while not(customqueue.isEmpty()):
+        x=customqueue.dequeue()
+        print(x.value.data)
+        if x.value.left is not None:
+            customqueue.enqueue(x.value.left)
+        if x.value.right is not None:
+            customqueue.enqueue(x.value.right)
 
 def search(rootnode,element):
     if rootnode.data == element:
@@ -43,4 +56,6 @@ print(insert(new,80))
 print(insert(new,100))
 print(insert(new,20))
 print(insert(new,40))
-search(new,99)
+levelorder(new)
+print('__________')
+search(new,20)
