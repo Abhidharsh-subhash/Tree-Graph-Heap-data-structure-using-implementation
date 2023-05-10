@@ -67,7 +67,14 @@ def heapifyextract(rootnode,index,heaptype):
     heapifyextract(rootnode,swapchild,heaptype)
 
 def extract(rootnode,heaptype):
-    if rootnode.heap
+    if rootnode.heap == 0:
+        return
+    else:
+        extractnode=rootnode.arr[1]
+        rootnode.arr[1]=rootnode.arr[rootnode.heap]
+        rootnode.arr[rootnode.heap]=None
+        heapifyextract(rootnode,1,heaptype)
+        return extractnode
 
 
 newheap=Heap(10)
@@ -77,4 +84,5 @@ print(insert(newheap,1,'Max'))
 print(insert(newheap,7,'Max'))
 print(insert(newheap,20,'Max'))
 print(insert(newheap,19,'Max'))
+extract(newheap,'Max')
 traversal(newheap)
