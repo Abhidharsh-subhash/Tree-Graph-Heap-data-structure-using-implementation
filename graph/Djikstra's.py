@@ -8,7 +8,7 @@ class Node:
     def __init__(self,name):
         self.name=name
         self.visited=False
-        #pervious node that we come to the node
+        #from which node we have come to this node
         self.predecessor=None
         self.neighbours=[]
         self.min_distance=float('inf')
