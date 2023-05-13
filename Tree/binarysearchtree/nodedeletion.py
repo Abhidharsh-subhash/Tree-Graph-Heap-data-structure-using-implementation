@@ -34,12 +34,32 @@ def insert(rootnode,value):
             rootnode.right=BST(value)
         else:
             insert(rootnode.right,value)
-
+#to delete a specific node from binary search tree
 def minvalue(node):
     current=node
-    while current.left is not None:
+    while (current.left is not None):
         current=current.left
     return current
+def delete(rootnode,value):
+    if rootnode is None:
+        return rootnode
+    if value<rootnode.data:
+        rootnode.left=delete(rootnode.left,value)
+    elif value>rootnode.data:
+        rootnode.right=delete(rootnode.right,value)
+    else:
+        if rootnode.left is None:
+            temp=rootnode.right
+            rootnode=None
+            return temp
+        if rootnode.right is None:
+            temp=rootnode.left
+            rootnode=None
+            return temp
+        temp=minvalue(rootnode.left)
+        rootnode.data=temp.data
+        rootnode.right=delete(rootnode.right,temp.data)
+    return rootnode
 
 new=BST(None)
 insert(new,90)
@@ -47,4 +67,5 @@ insert(new,20)
 insert(new,67)
 insert(new,55)
 insert(new,17)
+delete(new,55)
 levelorder(new)
