@@ -17,7 +17,7 @@ def heapsort(array):                                #TIME COMPLEXITY:O(NlogN)
     for i in range(n-1,0,-1):
         array[i],array[0]=array[0],array[i]
         heapify(array,i,0)
-    array.reverse()
+    #array.reverse()
 
 array=[4,7,2,5,7,8,3,1]
 heapsort(array)
